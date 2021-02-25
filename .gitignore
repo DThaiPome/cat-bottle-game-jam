@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Mm]emoryCaptures/
+/Cat Bottle RIP Game Jam/[Ll]ibrary/
+/Cat Bottle RIP Game Jam/[Tt]emp/
+/Cat Bottle RIP Game Jam/[Oo]bj/
+/Cat Bottle RIP Game Jam/[Bb]uild/
+/Cat Bottle RIP Game Jam/[Bb]uilds/
+/Cat Bottle RIP Game Jam/[Ll]ogs/
+/Cat Bottle RIP Game Jam/[Mm]emoryCaptures/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
