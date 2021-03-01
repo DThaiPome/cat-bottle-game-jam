@@ -17,6 +17,23 @@ public class PlayerShape : MonoBehaviour
     void OnEnterLooking()
     {
         Vector2 direction = this.states.GetLookDirection();
-        this.transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector2.Perpendicular(direction));
+        float angle;
+        if (direction.Equals(Vector2.right))
+        {
+            angle = 0;
+        } else if (direction.Equals(Vector2.up))
+        {
+            angle = 45;
+        } else if (direction.Equals(Vector2.left))
+        {
+            angle = 90;
+        } else if (direction.Equals(Vector2.down))
+        {
+            angle = 135;
+        } else
+        {
+            angle = 0;
+        }
+        this.transform.eulerAngles = Vector3.forward * angle;
     }
 }
