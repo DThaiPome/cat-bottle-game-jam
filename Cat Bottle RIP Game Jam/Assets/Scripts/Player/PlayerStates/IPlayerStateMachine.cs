@@ -21,4 +21,6 @@ public interface IPlayerStateMachine
     void OnStateUpdate(Action func, PlayerState state);
 
     void OnStateStart(Action func, PlayerState state);
+
+    void OnStateExit(Action func, PlayerState state);
 }

@@ -321,6 +321,8 @@ MonoBehaviour:
   initialState: 0
   initialLookDirection: {x: 0, y: 1}
   initialRollDirection: {x: 1, y: 0}
+  collisionLayerNames:
+  - Wall
 --- !u!61 &492297124
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -345,7 +347,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8828125, y: 1}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &492297125
 Rigidbody2D:
@@ -491,7 +493,7 @@ GameObject:
   - component: {fileID: 1492889956}
   - component: {fileID: 1492889955}
   - component: {fileID: 1492889958}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +555,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492889954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5, y: 0, z: 0}
+  m_LocalPosition: {x: -3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
