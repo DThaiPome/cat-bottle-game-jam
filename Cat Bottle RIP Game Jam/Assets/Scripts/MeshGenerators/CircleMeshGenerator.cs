@@ -26,7 +26,7 @@ public class CircleMeshGenerator : AMeshMaskGenerator
         for(int i = 0; i < resolution; i++)
         {
             float angle = angleStep * i;
-            Vector2 offset = RotateVector(direction, angle);
+            Vector2 offset = RotateVector(direction, angle) * this.radius;
             Vector2 vertex = offset + origin;
             uv[i] = vertex;
             verticies[i] = vertex;
