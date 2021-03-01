@@ -13,7 +13,7 @@ public class ConeMeshGenerator : AMeshMaskGenerator
         this.height = height;
     }
 
-    protected override Mesh GenerateValidMesh(Vector2 origin, Vector2 direction, int resolution)
+    protected override Mesh GenerateValidMesh(Vector2 origin, Vector2 offset, Vector2 direction, int resolution)
     {
         this.mesh = new Mesh();
 
@@ -35,11 +35,11 @@ public class ConeMeshGenerator : AMeshMaskGenerator
         leftEdge.Normalize();
         rightEdge.Normalize();
 
-        verticies[0] = origin;
+        verticies[0] = offset;
         uv[0] = verticies[0];
-        verticies[1] = GetPointAtObstruction(origin, leftEdge, edgeDistance, obstructionLayer);
+        verticies[1] = GetPointAtObstruction(origin, leftEdge, edgeDistance, obstructionLayer) + offset;
         uv[1] = verticies[1];
-        verticies[verticies.Length - 1] = GetPointAtObstruction(origin, rightEdge, edgeDistance, obstructionLayer);
+        verticies[verticies.Length - 1] = GetPointAtObstruction(origin, rightEdge, edgeDistance, obstructionLayer) + offset;
         uv[verticies.Length - 1] = verticies[verticies.Length - 1];
         int remainingVerticies = resolution - 3;
 
@@ -52,7 +52,7 @@ public class ConeMeshGenerator : AMeshMaskGenerator
                 int vertexIndex = i + 2;
                 float angle = (i + 1) * angleStep;
                 Vector2 iDirection = RotateVector(leftEdge, -angle);
-                Vector3 vertex = GetPointAtObstruction(origin, iDirection, edgeDistance, obstructionLayer);
+                Vector3 vertex = GetPointAtObstruction(origin, iDirection, edgeDistance, obstructionLayer) + offset;
 
                 verticies[vertexIndex] = vertex;
                 uv[vertexIndex] = vertex;

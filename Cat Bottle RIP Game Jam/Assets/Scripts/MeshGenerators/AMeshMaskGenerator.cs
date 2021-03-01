@@ -17,7 +17,7 @@ public abstract class AMeshMaskGenerator : IMeshMaskGenerator
 
     // Ensure the resolution is min 3 and the direction is not the 0 vector.
     // Also ensures the direction is a unit vector.
-    public Mesh GenerateMesh(Vector2 origin, Vector2 direction, int resolution)
+    public Mesh GenerateMesh(Vector2 origin, Vector2 offset, Vector2 direction, int resolution)
     {
         if (resolution < 3 || direction.Equals(Vector2.zero))
         {
@@ -25,12 +25,12 @@ public abstract class AMeshMaskGenerator : IMeshMaskGenerator
             return new Mesh();
         } else
         {
-            return this.GenerateValidMesh(origin, direction.normalized, resolution);
+            return this.GenerateValidMesh(origin, offset, direction.normalized, resolution);
         }
     }
 
     // Do this once the inputs are validated.
-    protected abstract Mesh GenerateValidMesh(Vector2 origin, Vector2 direction, int resolution);
+    protected abstract Mesh GenerateValidMesh(Vector2 origin, Vector2 offset, Vector2 direction, int resolution);
 
     // Other util stuff
     protected static Vector2 RotateVector(Vector2 v, float degrees)
@@ -46,10 +46,10 @@ public abstract class AMeshMaskGenerator : IMeshMaskGenerator
         RaycastHit2D hit = Physics2D.Raycast(origin, direction, distance, obstructionLayer);
         if (hit.collider != null)
         {
-            return hit.point;
+            return hit.point - origin;
         } else
         {
-            return origin + (direction * distance);
+            return (direction * distance);
         }
     }
 }

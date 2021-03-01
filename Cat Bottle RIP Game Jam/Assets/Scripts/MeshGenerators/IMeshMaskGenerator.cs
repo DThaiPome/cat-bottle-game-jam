@@ -11,5 +11,5 @@ public interface IMeshMaskGenerator
     /// <param name="direction">where the mesh is facing</param>
     /// <param name="resolution">higher resolution means more verticies in the mesh, minimum is 3</param>
     /// <returns></returns>
-    Mesh GenerateMesh(Vector2 origin, Vector2 direction, int resolution);
+    Mesh GenerateMesh(Vector2 origin, Vector2 offset, Vector2 direction, int resolution);
 }

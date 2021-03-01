@@ -31,6 +31,6 @@ public class MakeCircleMesh : MonoBehaviour
     private void GetMask()
     {
         this.maskGenerator = new CircleMeshGenerator(this.filter.mesh, 0, this.radius);
-        this.maskGenerator.GenerateMesh(this.transform.position, this.transform.right, this.resolution);
+        this.maskGenerator.GenerateMesh(this.transform.position, Vector2.zero, this.transform.right, this.resolution);
     }
 }

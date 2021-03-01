@@ -11,9 +11,8 @@ public class CircleMeshGenerator : AMeshMaskGenerator
         this.radius = radius;
     }
 
-    protected override Mesh GenerateValidMesh(Vector2 origin, Vector2 direction, int resolution)
+    protected override Mesh GenerateValidMesh(Vector2 origin, Vector2 offset, Vector2 direction, int resolution)
     {
-        Debug.Log(origin);
         this.mesh = new Mesh();
 
         // Resolution is the vertex count here
@@ -25,15 +24,15 @@ public class CircleMeshGenerator : AMeshMaskGenerator
         int[] triangles = new int[triangleCount * 3];
 
         // Put first vertex at center
-        verticies[0] = origin;
+        verticies[0] = offset;
         uv[0] = verticies[0];
 
         float angleStep = 360f / resolution;
         for(int i = 1; i < resolution + 1; i++)
         {
             float angle = angleStep * (i - 1);
-            Vector2 offset = RotateVector(direction, angle);
-            Vector2 vertex = GetPointAtObstruction(origin, offset, this.radius, obstructionLayer);
+            Vector2 iDirection = RotateVector(direction, angle);
+            Vector2 vertex = GetPointAtObstruction(origin, iDirection, this.radius, obstructionLayer) + offset;
             uv[i] = vertex;
             verticies[i] = vertex;
         }

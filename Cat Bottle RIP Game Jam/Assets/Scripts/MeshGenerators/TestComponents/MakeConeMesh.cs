@@ -32,6 +32,6 @@ public class MakeConeMesh : MonoBehaviour
     private void GetMask()
     {
         this.maskGenerator = new ConeMeshGenerator(this.filter.mesh, 0, this.width, this.height);
-        this.maskGenerator.GenerateMesh(this.transform.position, this.transform.right, this.resolution);
+        this.maskGenerator.GenerateMesh(this.transform.position, Vector2.zero, this.transform.right, this.resolution);
     }
 }
