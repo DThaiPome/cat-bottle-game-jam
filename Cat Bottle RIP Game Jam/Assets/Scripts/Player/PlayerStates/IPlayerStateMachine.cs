@@ -16,7 +16,9 @@ public interface IPlayerStateMachine
     Vector2 GetLookDirection();
     Vector2 GetRollDirection();
 
-    void OnStandingUpdate(Action func);
-    void OnLookingUpdate(Action func);
-    void OnRollingUpdate(Action func);
+    void OnStateEnter(Action func, PlayerState state);
+
+    void OnStateUpdate(Action func, PlayerState state);
+
+    void OnStateStart(Action func, PlayerState state);
 }

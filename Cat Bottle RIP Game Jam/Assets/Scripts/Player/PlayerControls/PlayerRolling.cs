@@ -14,7 +14,7 @@ public class PlayerRolling : MonoBehaviour
     void Start()
     {
         this.states = this.GetComponent<IPlayerStateMachine>();
-        this.states.OnRollingUpdate(this.OnRollingUpdate);
+        this.states.OnStateUpdate(this.OnRollingUpdate, PlayerState.Rolling);
     }
 
     private void OnRollingUpdate()

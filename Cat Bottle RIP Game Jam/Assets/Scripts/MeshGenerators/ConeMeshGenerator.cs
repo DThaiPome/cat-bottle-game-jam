@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ConeMeshGenerator : AMeshMaskGenerator
 {
-    private int width;
-    private int height;
+    private float width;
+    private float height;
 
-    public ConeMeshGenerator(Mesh mesh, int obstructionLayer, int width, int height) : base(mesh, obstructionLayer)
+    public ConeMeshGenerator(Mesh mesh, int obstructionLayer, float width, float height) : base(mesh, obstructionLayer)
     {
         this.width = width;
         this.height = height;

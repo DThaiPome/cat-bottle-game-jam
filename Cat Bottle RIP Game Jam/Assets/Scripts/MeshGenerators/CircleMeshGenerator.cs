@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CircleMeshGenerator : AMeshMaskGenerator
 {
-    private int radius;
+    private float radius;
 
-    public CircleMeshGenerator(Mesh mesh, int obstructionLayer, int radius) : base(mesh, obstructionLayer)
+    public CircleMeshGenerator(Mesh mesh, int obstructionLayer, float radius) : base(mesh, obstructionLayer)
     {
         this.radius = radius;
     }
