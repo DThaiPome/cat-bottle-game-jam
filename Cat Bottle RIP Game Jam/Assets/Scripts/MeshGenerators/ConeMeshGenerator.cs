@@ -15,6 +15,8 @@ public class ConeMeshGenerator : AMeshMaskGenerator
 
     protected override Mesh GenerateValidMesh(Vector2 origin, Vector2 direction, int resolution)
     {
+        this.mesh = new Mesh();
+
         // Resolution is the vertex count here
         Vector3[] verticies = new Vector3[resolution];
         Vector2[] uv = new Vector2[verticies.Length];

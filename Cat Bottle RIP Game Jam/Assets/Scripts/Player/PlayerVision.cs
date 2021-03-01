@@ -42,13 +42,13 @@ public class PlayerVision : MonoBehaviour
     private void OnEnterStanding()
     {
         this.maskGenerator = new CircleMeshGenerator(this.filter.mesh, obstructionLayers, this.circleVisionRadius);
-        this.maskGenerator.GenerateMesh(this.transform.localPosition, this.transform.right, this.visionResolution);
+        this.filter.mesh = this.maskGenerator.GenerateMesh(this.transform.localPosition, this.transform.right, this.visionResolution);
     }
 
     private void OnEnterLooking()
     {
         this.transform.rotation = Quaternion.identity;
         this.maskGenerator = new ConeMeshGenerator(this.filter.mesh, obstructionLayers, this.coneVisionWidth, this.coneVisionHeight);
-        this.maskGenerator.GenerateMesh(this.transform.localPosition, this.states.GetLookDirection(), this.visionResolution);
+        this.filter.mesh = this.maskGenerator.GenerateMesh(this.transform.localPosition, this.states.GetLookDirection(), this.visionResolution);
     }
 }

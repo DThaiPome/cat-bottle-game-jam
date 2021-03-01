@@ -13,26 +13,32 @@ public class CircleMeshGenerator : AMeshMaskGenerator
 
     protected override Mesh GenerateValidMesh(Vector2 origin, Vector2 direction, int resolution)
     {
+        Debug.Log(origin);
+        this.mesh = new Mesh();
+
         // Resolution is the vertex count here
-        Vector3[] verticies = new Vector3[resolution];
+        Vector3[] verticies = new Vector3[resolution + 1];
         Vector2[] uv = new Vector2[verticies.Length];
 
-        // One extra triangle for each extra vertex above 3
-        // Also triangle array size is equal to triangleCount * 3.
-        int triangleCount = resolution - 2;
+        // One triangle for each edge vertex
+        int triangleCount = resolution;
         int[] triangles = new int[triangleCount * 3];
 
+        // Put first vertex at center
+        verticies[0] = origin;
+        uv[0] = verticies[0];
+
         float angleStep = 360f / resolution;
-        for(int i = 0; i < resolution; i++)
+        for(int i = 1; i < resolution + 1; i++)
         {
-            float angle = angleStep * i;
-            Vector2 offset = RotateVector(direction, angle) * this.radius;
-            Vector2 vertex = offset + origin;
+            float angle = angleStep * (i - 1);
+            Vector2 offset = RotateVector(direction, angle);
+            Vector2 vertex = GetPointAtObstruction(origin, offset, this.radius, obstructionLayer);
             uv[i] = vertex;
             verticies[i] = vertex;
         }
 
-        for(int i = 0; i < triangleCount; i++)
+        for(int i = 0; i < triangleCount - 1; i++)
         {
             int rootIndex = i * 3;
 
@@ -40,6 +46,9 @@ public class CircleMeshGenerator : AMeshMaskGenerator
             triangles[rootIndex + 1] = i + 1;
             triangles[rootIndex + 2] = i + 2;
         }
+        triangles[(triangleCount - 1) * 3] = 0;
+        triangles[((triangleCount - 1) * 3) + 1] = resolution;
+        triangles[((triangleCount - 1) * 3) + 2] = 1;
 
         this.mesh.vertices = verticies;
         this.mesh.uv = uv;
