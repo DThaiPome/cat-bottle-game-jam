@@ -40,4 +40,16 @@ public abstract class AMeshMaskGenerator : IMeshMaskGenerator
         float newY = (v.x * Mathf.Sin(radians)) + (v.y * Mathf.Cos(radians));
         return new Vector2(newX, newY);
     }
+
+    protected static Vector2 GetPointAtObstruction(Vector2 origin, Vector2 direction, float distance, int obstructionLayer)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(origin, direction, distance, obstructionLayer);
+        if (hit.collider != null)
+        {
+            return hit.point;
+        } else
+        {
+            return origin + (direction * distance);
+        }
+    }
 }

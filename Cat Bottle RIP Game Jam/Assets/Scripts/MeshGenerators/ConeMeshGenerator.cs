@@ -28,11 +28,16 @@ public class ConeMeshGenerator : AMeshMaskGenerator
         Vector2 leftEdge = this.width * RotateVector(direction, 90) + this.height * direction;
         Vector2 rightEdge = this.width * RotateVector(direction, -90) + this.height * direction;
 
+        float edgeDistance = leftEdge.magnitude;
+
+        leftEdge.Normalize();
+        rightEdge.Normalize();
+
         verticies[0] = origin;
         uv[0] = verticies[0];
-        verticies[1] = leftEdge + origin;
+        verticies[1] = GetPointAtObstruction(origin, leftEdge, edgeDistance, obstructionLayer);
         uv[1] = verticies[1];
-        verticies[verticies.Length - 1] = rightEdge + origin;
+        verticies[verticies.Length - 1] = GetPointAtObstruction(origin, rightEdge, edgeDistance, obstructionLayer);
         uv[verticies.Length - 1] = verticies[verticies.Length - 1];
         int remainingVerticies = resolution - 3;
 
@@ -44,8 +49,8 @@ public class ConeMeshGenerator : AMeshMaskGenerator
             {
                 int vertexIndex = i + 2;
                 float angle = (i + 1) * angleStep;
-                Vector2 offset = RotateVector(leftEdge, -angle);
-                Vector3 vertex = offset + origin;
+                Vector2 iDirection = RotateVector(leftEdge, -angle);
+                Vector3 vertex = GetPointAtObstruction(origin, iDirection, edgeDistance, obstructionLayer);
 
                 verticies[vertexIndex] = vertex;
                 uv[vertexIndex] = vertex;

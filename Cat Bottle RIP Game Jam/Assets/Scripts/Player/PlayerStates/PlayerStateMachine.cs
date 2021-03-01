@@ -12,7 +12,7 @@ public class PlayerStateMachine : MonoBehaviour, IPlayerStateMachine
     [SerializeField]
     private Vector2 initialRollDirection = Vector2.right;
     [SerializeField]
-    private String[] collisionLayerNames;
+    private string[] collisionLayerNames;
 
     private PlayerState state;
     private Vector2 lookDirection;

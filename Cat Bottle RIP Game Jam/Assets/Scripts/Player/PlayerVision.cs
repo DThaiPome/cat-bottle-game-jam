@@ -15,12 +15,16 @@ public class PlayerVision : MonoBehaviour
     private float coneVisionHeight = 10;
     [SerializeField]
     private int visionResolution = 100;
+    [SerializeField]
+    private string[] obstructionLayerNames;
 
+    private LayerMask obstructionLayers;
     private MeshFilter filter;
     private IMeshMaskGenerator maskGenerator;
 
     void Start()
     {
+        this.obstructionLayers = LayerMask.GetMask(this.obstructionLayerNames);
         this.filter = this.GetComponent<MeshFilter>();
         this.filter.mesh = new Mesh();
         if (this.states != null)
@@ -37,13 +41,14 @@ public class PlayerVision : MonoBehaviour
 
     private void OnEnterStanding()
     {
-        this.maskGenerator = new CircleMeshGenerator(this.filter.mesh, 0, this.circleVisionRadius);
+        this.maskGenerator = new CircleMeshGenerator(this.filter.mesh, obstructionLayers, this.circleVisionRadius);
         this.maskGenerator.GenerateMesh(this.transform.localPosition, this.transform.right, this.visionResolution);
     }
 
     private void OnEnterLooking()
     {
-        this.maskGenerator = new ConeMeshGenerator(this.filter.mesh, 0, this.coneVisionWidth, this.coneVisionHeight);
-        this.maskGenerator.GenerateMesh(this.transform.localPosition, this.transform.right, this.visionResolution);
+        this.transform.rotation = Quaternion.identity;
+        this.maskGenerator = new ConeMeshGenerator(this.filter.mesh, obstructionLayers, this.coneVisionWidth, this.coneVisionHeight);
+        this.maskGenerator.GenerateMesh(this.transform.localPosition, this.states.GetLookDirection(), this.visionResolution);
     }
 }
