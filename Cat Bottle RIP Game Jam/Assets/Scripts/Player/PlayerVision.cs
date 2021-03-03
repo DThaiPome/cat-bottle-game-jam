@@ -33,6 +33,7 @@ public class PlayerVision : MonoBehaviour
             this.states.OnStateEnter(this.OnEnterStanding, PlayerState.Standing);
             this.states.OnStateStart(this.OnEnterLooking, PlayerState.Looking);
             this.states.OnStateEnter(this.OnEnterLooking, PlayerState.Looking);
+            this.states.OnStateUpdate(this.OnEnterLooking, PlayerState.Rolling);
         } else
         {
             Debug.LogError("No state machine found");
