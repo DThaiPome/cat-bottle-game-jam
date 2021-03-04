@@ -16,6 +16,7 @@ public interface IPlayerStateMachine
     Vector2 GetLookDirection();
     Vector2 GetRollDirection();
     void ChangeDirection(Vector2 direction);
+    void ChangeState(PlayerState newState);
 
     void OnStateEnter(Action func, PlayerState state);
 

@@ -285,6 +285,11 @@ public class PlayerStateMachine : MonoBehaviour, IPlayerStateMachine
         this.rollDirection = direction;
     }
 
+    public void ChangeState(PlayerState newState)
+    {
+        this.EnterState(newState);
+    }
+
     public Vector2 GetRollDirection()
     {
         return this.rollDirection;
