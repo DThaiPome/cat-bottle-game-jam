@@ -40,7 +40,7 @@ public class SittingDogBehavior : MonoBehaviour
             if (direction == Vector2.up && directionfacing == 2)
             {
 
-                if (leftward == 0)
+                if (leftward)
                 {
                     cat.ChangeDirection(Vector2.right);
                 }
@@ -55,7 +55,7 @@ public class SittingDogBehavior : MonoBehaviour
             else if (direction == Vector2.down && directionfacing == 0)
             {
 
-                if (leftward == 0)
+                if (leftward)
                 {
                     cat.ChangeDirection(Vector2.left);
                 }
@@ -69,7 +69,7 @@ public class SittingDogBehavior : MonoBehaviour
             else if (direction == Vector2.left && directionfacing == 3)
             {
 
-                if (leftward == 0)
+                if (leftward)
                 {
                     cat.ChangeDirection(Vector2.up);
                 }
@@ -83,7 +83,7 @@ public class SittingDogBehavior : MonoBehaviour
             else if (direction == Vector2.right && directionfacing == 1)
             {
 
-                if (leftward == 0)
+                if (leftward)
                 {
                     cat.ChangeDirection(Vector2.up);
                 }
