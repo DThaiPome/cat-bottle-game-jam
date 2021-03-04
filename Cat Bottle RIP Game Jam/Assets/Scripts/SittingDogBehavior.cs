@@ -5,8 +5,9 @@ using UnityEngine;
 public class SittingDogBehavior : MonoBehaviour
 {
 
+    // 0: facing up, 1: facing left, 2: facing down, 3: facing right
     public float directionfacing = 0f;
-    public float leftward = 0f;
+    public bool leftward = true;
 
     // Start is called before the first frame update
     void Start()
