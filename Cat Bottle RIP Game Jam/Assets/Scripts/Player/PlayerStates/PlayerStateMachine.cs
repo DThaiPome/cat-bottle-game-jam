@@ -208,7 +208,7 @@ public class PlayerStateMachine : MonoBehaviour, IPlayerStateMachine
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (this.state == PlayerState.Rolling)
+        if (this.state == PlayerState.Rolling && other.gameObject.CompareTag("Wall"))
         {
             this.EnterState(PlayerState.Standing);
         }
@@ -278,6 +278,11 @@ public class PlayerStateMachine : MonoBehaviour, IPlayerStateMachine
     public Vector2 GetLookDirection()
     {
         return this.lookDirection;
+    }
+
+    public void ChangeDirection(Vector2 direction)
+    {
+        this.rollDirection = direction;
     }
 
     public Vector2 GetRollDirection()

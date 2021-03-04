@@ -21,6 +21,7 @@ public class PlayerRolling : MonoBehaviour
     private void OnRollingUpdate()
     {
         Vector2 direction = this.states.GetRollDirection();
+        //Debug.Log(direction);
         Vector3 offset = direction * TileCoordinates.TilesToUnits(this.rollSpeed);
         this.transform.position += offset * Time.deltaTime;
     }

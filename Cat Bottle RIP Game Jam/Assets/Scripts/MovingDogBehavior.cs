@@ -20,7 +20,6 @@ public class MovingDogBehavior : MonoBehaviour
     void Start()
     {
 
-        
     }
 
     // Update is called once per frame
@@ -46,9 +45,48 @@ public class MovingDogBehavior : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision){
+    private void OnTriggerEnter2D(Collider2D other){
+
+
 
         //call cat Function
+        if(other.gameObject.CompareTag("Player")){
+
+
+            PlayerStateMachine cat = other.gameObject.GetComponent<PlayerStateMachine>();
+
+            Vector2 direction = cat.GetRollDirection();
+
+            //Debug.Log(direction);
+
+            if(direction == Vector2.up){
+
+                cat.ChangeDirection(Vector2.down);
+
+
+            }
+
+            else if(direction == Vector2.down){
+
+                cat.ChangeDirection(Vector2.up);
+
+            }
+
+            else if(direction == Vector2.left){
+
+                cat.ChangeDirection(Vector2.right);
+                //direction = cat.GetRollDirection();
+                //Debug.Log(direction);
+
+            }
+
+            else if(direction == Vector2.right){
+
+                cat.ChangeDirection(Vector2.left);
+
+            }
+
+        }
 
     }
 
