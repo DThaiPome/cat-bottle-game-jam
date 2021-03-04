@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
 {
 
     [SerializeField]
-    public static bool isGameOver = false; 
+    public bool isGameOver = false; 
     public string nextLevel;
    
     // Start is called before the first frame update

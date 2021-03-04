@@ -17,14 +17,29 @@ public class MovingDogBehavior : MonoBehaviour
     public float maxY = 0f;
 
     static float t = 0f;
+
+    public LevelManager levelM;
     void Start()
     {
+        
+    }
 
+    bool gameOver(){
+
+        if(levelM == null){
+
+            return false;
+        }
+        else{
+
+            return levelM.isGameOver;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(!gameOver()){
 
        transform.position = new Vector3(Mathf.Lerp(minX, maxX, t),Mathf.Lerp(minY, maxY, t), 0);
 
@@ -43,11 +58,13 @@ public class MovingDogBehavior : MonoBehaviour
             t = 0.0f;
         }
 
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other){
 
-
+  if(!gameOver()){
 
         //call cat Function
         if(other.gameObject.CompareTag("Player")){
@@ -87,6 +104,7 @@ public class MovingDogBehavior : MonoBehaviour
             }
 
         }
+  }
 
     }
 

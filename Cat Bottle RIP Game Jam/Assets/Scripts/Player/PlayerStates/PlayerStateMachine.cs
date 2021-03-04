@@ -36,6 +36,8 @@ public class PlayerStateMachine : MonoBehaviour, IPlayerStateMachine
 
     private LayerMask collisionLayerMask;
 
+    public LevelManager levelM;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,9 +77,23 @@ public class PlayerStateMachine : MonoBehaviour, IPlayerStateMachine
         }
     }
 
+    bool gameOver(){
+
+        if(levelM == null){
+
+            return false;
+        }
+        else{
+
+            return levelM.isGameOver;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
+
+    if(!gameOver()){
         switch(this.state)
         {
             case PlayerState.Standing:
@@ -104,6 +120,7 @@ public class PlayerStateMachine : MonoBehaviour, IPlayerStateMachine
             default:
                 return;
         }
+    }
     }
 
     private void TransitionFromStanding()

@@ -9,6 +9,8 @@ public class SittingDogBehavior : MonoBehaviour
     public float directionfacing = 0f;
     public bool leftward = true;
 
+    public LevelManager levelM;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +23,22 @@ public class SittingDogBehavior : MonoBehaviour
         
     }
 
+    bool gameOver(){
+
+        if(levelM == null){
+
+            return false;
+        }
+        else{
+
+            return levelM.isGameOver;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-
+  if(!gameOver()){
 
         //call cat Function
         if (other.gameObject.CompareTag("Player"))
@@ -95,6 +109,7 @@ public class SittingDogBehavior : MonoBehaviour
             }
 
         }
+  }
 
     }
 }
