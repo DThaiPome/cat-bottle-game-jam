@@ -10,13 +10,13 @@ public class TVBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.levelM = GameObject.Find("LevelManager").GetComponent<LevelManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (broken)
+        if (broken && !this.gameOver())
         {
             levelM.LevelBeat();
         }
