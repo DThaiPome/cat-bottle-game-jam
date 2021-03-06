@@ -56,4 +56,9 @@ public class PlayerShape : MonoBehaviour
         this.collider.size = this.baseSize;
         this.collider.offset = this.baseOffset;
     }
+
+    public void RotateCat(Vector2 rollDirection)
+    {
+
+    }
 }

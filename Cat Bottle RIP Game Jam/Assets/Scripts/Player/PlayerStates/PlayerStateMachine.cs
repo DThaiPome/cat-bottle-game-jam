@@ -299,7 +299,30 @@ public class PlayerStateMachine : MonoBehaviour, IPlayerStateMachine
 
     public void ChangeDirection(Vector2 direction)
     {
+        Vector2 oldDirection = this.rollDirection;
         this.rollDirection = direction;
+
+        if (!this.rollDirection.Equals(-oldDirection) && !this.rollDirection.Equals(oldDirection))
+        {
+            if (this.rollDirection == this.lookDirection)
+            {
+                this.RotateAroundFeet(Mathf.RoundToInt(Vector2.Dot(oldDirection, new Vector2(1, 1))));        
+            } else
+            {
+                this.RotateAroundHead(Mathf.RoundToInt(Vector2.Dot(oldDirection, new Vector2(1, 1))));
+            }
+        }
+    }
+
+    // 1 for counterclockwise, -1 for clockwise
+    private void RotateAroundFeet(int direction)
+    {
+
+    }
+
+    private void RotateAroundHead(int direction)
+    {
+
     }
 
     public void ChangeState(PlayerState newState)
