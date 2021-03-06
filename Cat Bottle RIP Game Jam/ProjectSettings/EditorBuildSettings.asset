@@ -14,7 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 31e18f64ef9944a58bd7a48c48445cbb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dont touch has covid/Level3.unity
     guid: 1ca64c5aa667346b2904d9d9363fba2f
+  - enabled: 1
+    path: Assets/Scenes/Level3 Fuck You.unity
+    guid: 70dcb31a1753c4067993fd91a55651c0
   m_configObjects: {}
