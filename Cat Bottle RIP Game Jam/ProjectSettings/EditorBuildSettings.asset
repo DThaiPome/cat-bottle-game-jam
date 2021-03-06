@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Level2.unity
     guid: 31e18f64ef9944a58bd7a48c48445cbb
   - enabled: 1
-    path: Assets/Scenes/Level3.unity
+    path: Assets/Scenes/Dont touch has covid/Level3.unity
     guid: 1ca64c5aa667346b2904d9d9363fba2f
   m_configObjects: {}

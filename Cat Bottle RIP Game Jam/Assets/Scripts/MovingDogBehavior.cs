@@ -65,7 +65,7 @@ public class MovingDogBehavior : MonoBehaviour
             maxY = minY;
             minY = tempY;
             t = 0.0f;
-            Debug.Log("Called Function");
+            //Debug.Log("Called Function");
         }
 
         
