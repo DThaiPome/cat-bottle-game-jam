@@ -37,79 +37,78 @@ public class SittingDogBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if(!gameOver()){
 
-  if(!gameOver()){
-
-        //call cat Function
-        if (other.gameObject.CompareTag("Player"))
-        {
-
-
-            PlayerStateMachine cat = other.gameObject.GetComponent<PlayerStateMachine>();
-
-            Vector2 direction = cat.GetRollDirection();
-
-            //Debug.Log(direction);
-
-            if (direction == Vector2.up && directionfacing == 2)
+            //call cat Function
+            if (other.gameObject.CompareTag("Player"))
             {
 
-                if (leftward)
+
+                PlayerStateMachine cat = other.gameObject.GetComponent<PlayerStateMachine>();
+
+                Vector2 direction = cat.GetRollDirection();
+
+                //Debug.Log(direction);
+
+                if (direction == Vector2.up && directionfacing == 2)
                 {
-                    cat.ChangeDirection(Vector2.right);
-                }
-                else
-                {
-                    cat.ChangeDirection(Vector2.left);
+
+                    if (leftward)
+                    {
+                        cat.ChangeDirection(Vector2.right);
+                    }
+                    else
+                    {
+                        cat.ChangeDirection(Vector2.left);
+                    }
+
+
                 }
 
+                else if (direction == Vector2.down && directionfacing == 0)
+                {
+
+                    if (leftward)
+                    {
+                        cat.ChangeDirection(Vector2.left);
+                    }
+                    else
+                    {
+                        cat.ChangeDirection(Vector2.right);
+                    }
+
+                }
+
+                else if (direction == Vector2.left && directionfacing == 3)
+                {
+
+                    if (leftward)
+                    {
+                        cat.ChangeDirection(Vector2.up);
+                    }
+                    else
+                    {
+                        cat.ChangeDirection(Vector2.down);
+                    }
+
+                }
+
+                else if (direction == Vector2.right && directionfacing == 1)
+                {
+
+                    if (leftward)
+                    {
+                        cat.ChangeDirection(Vector2.up);
+                    }
+                    else
+                    {
+                        cat.ChangeDirection(Vector2.down);
+                    }
+
+                }
 
             }
-
-            else if (direction == Vector2.down && directionfacing == 0)
-            {
-
-                if (leftward)
-                {
-                    cat.ChangeDirection(Vector2.left);
-                }
-                else
-                {
-                    cat.ChangeDirection(Vector2.right);
-                }
-
-            }
-
-            else if (direction == Vector2.left && directionfacing == 3)
-            {
-
-                if (leftward)
-                {
-                    cat.ChangeDirection(Vector2.up);
-                }
-                else
-                {
-                    cat.ChangeDirection(Vector2.down);
-                }
-
-            }
-
-            else if (direction == Vector2.right && directionfacing == 1)
-            {
-
-                if (leftward)
-                {
-                    cat.ChangeDirection(Vector2.up);
-                }
-                else
-                {
-                    cat.ChangeDirection(Vector2.down);
-                }
-
-            }
-
         }
-  }
 
     }
 }
