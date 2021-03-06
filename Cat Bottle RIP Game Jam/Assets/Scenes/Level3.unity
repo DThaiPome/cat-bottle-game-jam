@@ -1863,6 +1863,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovingDog (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5821934830865238454, guid: d6ce6f6e1dfda4e5e9742a3b9f910244, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6ce6f6e1dfda4e5e9742a3b9f910244, type: 3}
 --- !u!1001 &638947353
