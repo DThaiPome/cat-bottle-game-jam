@@ -302,15 +302,25 @@ public class PlayerStateMachine : MonoBehaviour, IPlayerStateMachine
     {
         Vector2 oldDirection = this.rollDirection;
         this.rollDirection = direction;
-
         if (!this.rollDirection.Equals(-oldDirection) && !this.rollDirection.Equals(oldDirection))
         {
-            if (this.rollDirection == this.lookDirection)
+            int rotateDirection = (oldDirection.x + oldDirection.y) == (oldDirection.x == 0 ? 1 : -1) * (direction.x + direction.y) ? 1 : -1;
+            if (rotateDirection == 1)
             {
-                this.RotateAroundFeet(Mathf.RoundToInt(Vector2.Dot(oldDirection, new Vector2(1, 1))));        
+                this.lookDirection = Vector2.Perpendicular(this.lookDirection);
             } else
             {
-                this.RotateAroundHead(Mathf.RoundToInt(Vector2.Dot(oldDirection, new Vector2(1, 1))));
+                for(int i = 0; i < 3; i++)
+                {
+                    this.lookDirection = Vector2.Perpendicular(this.lookDirection);
+                }
+            }
+            if (this.rollDirection == this.lookDirection)
+            {
+                this.RotateAroundFeet(rotateDirection);
+            } else
+            {
+                this.RotateAroundHead(rotateDirection);
             }
         }
     }
@@ -318,12 +328,20 @@ public class PlayerStateMachine : MonoBehaviour, IPlayerStateMachine
     // 1 for counterclockwise, -1 for clockwise
     private void RotateAroundFeet(int direction)
     {
-
+        this.transform.eulerAngles += Vector3.forward * 90 * direction;
     }
 
     private void RotateAroundHead(int direction)
     {
+        this.RotateAroundFeet(direction);
+        float tileSize = TileCoordinates.TilesToUnits(1);
+        this.transform.position += (Vector3)(-this.lookDirection);
+        this.transform.position += (Vector3)(-direction * Vector2.Perpendicular(this.lookDirection));
 
+        // Go to the nearest whole tile.
+        Vector2 tilePos = TileCoordinates.UnitPosToTilePos(this.transform.position);
+        Vector2 roundedTiles = new Vector2(Mathf.Round(tilePos.x), Mathf.Round(tilePos.y));
+        this.transform.position = TileCoordinates.TilePosToUnitPos(roundedTiles);
     }
 
     public void ChangeState(PlayerState newState)
