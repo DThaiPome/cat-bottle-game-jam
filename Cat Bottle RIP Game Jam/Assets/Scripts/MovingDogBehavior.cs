@@ -16,12 +16,20 @@ public class MovingDogBehavior : MonoBehaviour
     public float minY = 0f;
     public float maxY = 0f;
 
-    static float t = 0f;
+    private float t = 0f;
+
+    private Vector3 start;
+    private Vector3 end;
 
     private LevelManager levelM;
     void Start()
     {
         this.levelM = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+
+        start = new Vector3(minX, minY, transform.position.z);
+        end = new Vector3(maxX, maxY, transform.position.z);
+
+
     }
 
     bool gameOver(){
@@ -40,8 +48,9 @@ public class MovingDogBehavior : MonoBehaviour
     void Update()
     {
         if(!gameOver()){
+            
 
-       transform.position = new Vector3(Mathf.Lerp(minX, maxX, t),Mathf.Lerp(minY, maxY, t), 0);
+        transform.position = new Vector3(Mathf.Lerp(minX, maxX, t), Mathf.Lerp(minY, maxY, t), 0);
 
         t += moveSpeed * Time.deltaTime;
 
@@ -56,11 +65,22 @@ public class MovingDogBehavior : MonoBehaviour
             maxY = minY;
             minY = tempY;
             t = 0.0f;
+            //Debug.Log("Called Function");
         }
 
-        }
+        
+    }
+        
 
     }
+
+    private bool VEqual(Vector3 one, Vector3 two){
+
+        return Mathf.Abs(Vector3.Distance(one, two)) <= 0.1;
+
+    }
+
+
 
     private void OnTriggerEnter2D(Collider2D other){
 
