@@ -50,6 +50,6 @@ public class PlayerVision : MonoBehaviour
     {
         this.transform.rotation = Quaternion.identity;
         this.maskGenerator = new ConeMeshGenerator(this.filter.mesh, obstructionLayers, this.coneVisionWidth, this.coneVisionHeight);
-        this.filter.mesh = this.maskGenerator.GenerateMesh(this.transform.position, TileCoordinates.UnitsToTiles(1) * this.states.GetLookDirection(), this.states.GetLookDirection(), this.visionResolution);
+        this.filter.mesh = this.maskGenerator.GenerateMesh(this.transform.position + (Vector3)(TileCoordinates.UnitsToTiles(1) * this.states.GetLookDirection()), TileCoordinates.UnitsToTiles(1) * this.states.GetLookDirection(), this.states.GetLookDirection(), this.visionResolution);
     }
 }
