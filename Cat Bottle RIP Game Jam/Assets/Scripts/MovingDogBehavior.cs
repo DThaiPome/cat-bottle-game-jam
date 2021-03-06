@@ -18,10 +18,10 @@ public class MovingDogBehavior : MonoBehaviour
 
     static float t = 0f;
 
-    public LevelManager levelM;
+    private LevelManager levelM;
     void Start()
     {
-        
+        this.levelM = GameObject.Find("LevelManager").GetComponent<LevelManager>();
     }
 
     bool gameOver(){

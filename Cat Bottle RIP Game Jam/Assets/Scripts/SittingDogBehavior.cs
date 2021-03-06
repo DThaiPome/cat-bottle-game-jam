@@ -9,12 +9,12 @@ public class SittingDogBehavior : MonoBehaviour
     public float directionfacing = 0f;
     public bool leftward = true;
 
-    public LevelManager levelM;
+    private LevelManager levelM;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.levelM = GameObject.Find("LevelManager").GetComponent<LevelManager>();
     }
 
     // Update is called once per frame
