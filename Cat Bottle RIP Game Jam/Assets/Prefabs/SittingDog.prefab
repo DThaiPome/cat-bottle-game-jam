@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5792249961912083125}
   m_Layer: 0
   m_Name: Front Face
-  m_TagString: Untagged
+  m_TagString: Dog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8582d0dd3e05dc64296c7ac00616cfa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  directionfacing: 0
+  directionfacing: 2
   leftward: 1
   levelM: {fileID: 0}
 --- !u!61 &3688170040807241880
@@ -58,10 +58,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0027379394, y: -0.48917946}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -72,7 +72,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6069821, y: 0.1917904}
   m_EdgeRadius: 0
 --- !u!50 &5792249961912083125
 Rigidbody2D:
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 8246128472015882154}
   m_Layer: 0
   m_Name: SittingDog
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,7 +170,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
-  m_Color: {r: 0.076538086, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.60796833, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -193,7 +193,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.111091524}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -204,7 +204,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.77781695}
   m_EdgeRadius: 0
 --- !u!50 &8246128472015882154
 Rigidbody2D:

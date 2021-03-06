@@ -268,7 +268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7312356796879216317, guid: e04902301681e48fd91fda01716fd340, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7312356796879216317, guid: e04902301681e48fd91fda01716fd340, type: 3}
       propertyPath: m_LocalPosition.z
@@ -311,6 +311,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5203287687032334538, guid: 0318f6cff12e3f64293a5c8f899b463c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.77781695
+      objectReference: {fileID: 0}
+    - target: {fileID: -5203287687032334538, guid: 0318f6cff12e3f64293a5c8f899b463c, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.111091524
+      objectReference: {fileID: 0}
+    - target: {fileID: -61305815705191768, guid: 0318f6cff12e3f64293a5c8f899b463c, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -61305815705191768, guid: 0318f6cff12e3f64293a5c8f899b463c, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -61305815705191768, guid: 0318f6cff12e3f64293a5c8f899b463c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.60796833
+      objectReference: {fileID: 0}
     - target: {fileID: 1149897393223489071, guid: 0318f6cff12e3f64293a5c8f899b463c, type: 3}
       propertyPath: m_TagString
       value: Dog
@@ -323,9 +343,13 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 3117067644575592235, guid: 0318f6cff12e3f64293a5c8f899b463c, type: 3}
+      propertyPath: directionfacing
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3688170040807241880, guid: 0318f6cff12e3f64293a5c8f899b463c, type: 3}
       propertyPath: m_Size.x
-      value: 0.8298507
+      value: 0.6069821
       objectReference: {fileID: 0}
     - target: {fileID: 3688170040807241880, guid: 0318f6cff12e3f64293a5c8f899b463c, type: 3}
       propertyPath: m_Size.y
@@ -333,7 +357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3688170040807241880, guid: 0318f6cff12e3f64293a5c8f899b463c, type: 3}
       propertyPath: m_Offset.x
-      value: 0.010634303
+      value: -0.0027379394
       objectReference: {fileID: 0}
     - target: {fileID: 3688170040807241880, guid: 0318f6cff12e3f64293a5c8f899b463c, type: 3}
       propertyPath: m_Offset.y
