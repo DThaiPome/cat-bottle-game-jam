@@ -23,5 +23,13 @@ public class EndLevels : MonoBehaviour
 
     }
 
+    public void CallMainMenu(){
+
+        Debug.Log("You have clicked to reset");
+         SceneManager.LoadScene("MainMenu");
+
+
+    }
+
 
 }
