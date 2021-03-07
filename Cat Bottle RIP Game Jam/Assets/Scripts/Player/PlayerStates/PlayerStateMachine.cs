@@ -315,7 +315,7 @@ public class PlayerStateMachine : MonoBehaviour, IPlayerStateMachine
                     this.lookDirection = Vector2.Perpendicular(this.lookDirection);
                 }
             }
-            if (this.rollDirection == this.lookDirection)
+            if (oldDirection != this.lookDirection)
             {
                 this.RotateAroundFeet(rotateDirection);
             } else
