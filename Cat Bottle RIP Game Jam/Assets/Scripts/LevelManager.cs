@@ -11,12 +11,14 @@ public class LevelManager : MonoBehaviour
     public bool isGameOver = false; 
     public string nextLevel;
     public Text gameText;
+    public Image textBackground;
    
     // Start is called before the first frame update
     void Start()
     {
         isGameOver = false;
         gameText.gameObject.SetActive(false);
+        textBackground.gameObject.SetActive(false);
 
     }
 
@@ -50,7 +52,8 @@ public class LevelManager : MonoBehaviour
 
          Debug.Log("Level Beat");
 
-         gameText.gameObject.SetActive(true);
+        gameText.gameObject.SetActive(true);
+        textBackground.gameObject.SetActive(true);
         isGameOver = true;
 
         Invoke("LoadNextLevel", 2);
