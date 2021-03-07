@@ -1548,6 +1548,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (206)
       objectReference: {fileID: 0}
+    - target: {fileID: 3629289803310073624, guid: 32487afda41c74ca69ebc49ab3e62e4b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3629289803310073625, guid: 32487afda41c74ca69ebc49ab3e62e4b, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32487afda41c74ca69ebc49ab3e62e4b, type: 3}
 --- !u!4 &237181577 stripped
@@ -2144,7 +2152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3629289803310073624, guid: 32487afda41c74ca69ebc49ab3e62e4b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 3629289803310073624, guid: 32487afda41c74ca69ebc49ab3e62e4b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7527,6 +7535,14 @@ PrefabInstance:
     - target: {fileID: 3629289801803551068, guid: 32487afda41c74ca69ebc49ab3e62e4b, type: 3}
       propertyPath: m_Name
       value: Wall (205)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3629289803310073624, guid: 32487afda41c74ca69ebc49ab3e62e4b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3629289803310073625, guid: 32487afda41c74ca69ebc49ab3e62e4b, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32487afda41c74ca69ebc49ab3e62e4b, type: 3}
