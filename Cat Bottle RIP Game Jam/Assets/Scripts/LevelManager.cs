@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; 
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -9,11 +10,13 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     public bool isGameOver = false; 
     public string nextLevel;
+    public Text gameText;
    
     // Start is called before the first frame update
     void Start()
     {
         isGameOver = false;
+        gameText.gameObject.SetActive(false);
 
     }
 
@@ -47,6 +50,7 @@ public class LevelManager : MonoBehaviour
 
          Debug.Log("Level Beat");
 
+         gameText.gameObject.SetActive(true);
         isGameOver = true;
 
         Invoke("LoadNextLevel", 2);
