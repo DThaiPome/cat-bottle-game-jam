@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a28803cadc0ac24eafd49811fddfa6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalTV: {fileID: 21300000, guid: 7933058514b85564eb248c5f37e6a198, type: 3}
+  brokenTV: {fileID: 21300000, guid: f71e7a73b989c5d48a4b3392433110eb, type: 3}
   broken: 0
   levelM: {fileID: 0}
 --- !u!212 &-4775164172080280393
