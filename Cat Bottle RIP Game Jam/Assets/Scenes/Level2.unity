@@ -2416,6 +2416,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SittingDog
       objectReference: {fileID: 0}
+    - target: {fileID: 3117067644575592235, guid: 0318f6cff12e3f64293a5c8f899b463c, type: 3}
+      propertyPath: directionfacing
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9163485367416080245, guid: 0318f6cff12e3f64293a5c8f899b463c, type: 3}
       propertyPath: m_RootOrder
       value: 2
