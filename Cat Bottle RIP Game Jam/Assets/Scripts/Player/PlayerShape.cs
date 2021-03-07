@@ -7,6 +7,9 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class PlayerShape : MonoBehaviour
 {
+    [SerializeField]
+    private PlayerQuad quad;
+
     private IPlayerStateMachine states;
     private BoxCollider2D collider;
     private Vector2 baseSize;
@@ -23,6 +26,7 @@ public class PlayerShape : MonoBehaviour
         this.collider = this.GetComponent<BoxCollider2D>();
         this.baseSize = this.collider.size;
         this.baseOffset = this.collider.offset;
+        this.UpdateQuad();
     }
     
     void OnEnterLooking()
@@ -49,16 +53,19 @@ public class PlayerShape : MonoBehaviour
 
         this.collider.size = new Vector2(this.baseSize.x * 2, this.baseSize.y);
         this.collider.offset += Vector2.right * 0.5f;
+
+        this.UpdateQuad();
     }
 
     void OnEnterStanding()
     {
         this.collider.size = this.baseSize;
         this.collider.offset = this.baseOffset;
+        this.UpdateQuad();
     }
 
-    public void RotateCat(Vector2 rollDirection)
+    private void UpdateQuad()
     {
-
+        this.quad.SetDimensions(this.collider.size.x, this.collider.size.y, this.collider.offset);
     }
 }
