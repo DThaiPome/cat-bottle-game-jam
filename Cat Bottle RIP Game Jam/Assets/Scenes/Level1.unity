@@ -2401,6 +2401,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: You can't see haha idiot
       objectReference: {fileID: 0}
+    - target: {fileID: 1285863702450189877, guid: 366ae24ac466b564289bc6bdfcc56307, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1285863702450189879, guid: 366ae24ac466b564289bc6bdfcc56307, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3104,7 +3108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7754347342583261723, guid: 0c87ccc34fa85d249965ab36605265b8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c87ccc34fa85d249965ab36605265b8, type: 3}
